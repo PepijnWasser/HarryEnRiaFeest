@@ -19,6 +19,21 @@ AFRAME.registerComponent('video-controls', {
 		let videoMesh  = videoDisplay.getObject3D("mesh");
 		let borderMesh = videoBorder.getObject3D("mesh");
 		
+		video.play();
+
+		videoBorder.addEventListener("touchstart", function(event)
+		{
+			if ( video.paused )
+			{
+				video.play();
+				borderMesh.material.color.set("#004400");
+			}
+			else
+			{
+				video.pause();
+				borderMesh.material.color.set("#440000");
+			}
+		});
 		videoBorder.addEventListener("mousedown", function(event)
 		{
 			if ( video.paused )
@@ -50,7 +65,6 @@ AFRAME.registerComponent('video-controls', {
 
       <a-entity mindar-image-target="targetIndex: 0">
 		  <a-plane position="0 0 0" width="1" height="1" material="src: #video" autoplay></a-plane>
-		  <a-video src="#video" width="16" height="9" position="0 0 0"></a-video>
       </a-entity>
 
 
