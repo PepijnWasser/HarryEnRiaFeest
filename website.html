@@ -48,25 +48,11 @@ AFRAME.registerComponent('video-controls', {
 	 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
+	    <a-video src="#video" width="16" height="9" position="0 0 0"></a-video>
+
       <a-entity mindar-image-target="targetIndex: 0">
 		  <a-plane position="0 0 0" width="1" height="1" material="src: #video" autoplay></a-plane>
-		  <a-video src="#video" width="1" height="1"></a-video>
-	  	  <!--
-       <a-plane
-		id = "video-border"
-		width = "17" height = "10"
-		position = "0 5 -20"
-		color = "#440000"
-		video-controls
-        >		
-		<a-video  
-			id = "video-display"
-			width="16" height="9" 
-			position="0 0 0.1"
-			src="#Uitnodigingsvideo">
-		</a-video>
-	</a-plane>
-		  -->
+		  <a-video src="#video" width="16" height="9" position="0 0 0"></a-video>
       </a-entity>
 
 
