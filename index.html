@@ -1,9 +1,21 @@
-<!doctype html>
 <html>
   <head>
-    <title>This is the title of the webpage!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    <a-scene mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+      </a-entity>
+
+      <a-video src="./Uitnodigingsvideo.mp4" width="16" height="9" position="0 0 -20" autoplay loop="true"></a-video>
+
+
+    </a-scene>
   </body>
 </html>
