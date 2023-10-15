@@ -5,6 +5,40 @@
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
+
+  <script>
+
+AFRAME.registerComponent('video-controls', {
+	
+	init: function()
+	{
+		let video = document.querySelector("#video");
+
+		let videoDisplay = document.querySelector("#video-display");
+		let videoBorder  = document.querySelector("#video-border");
+		let videoMesh  = videoDisplay.getObject3D("mesh");
+		let borderMesh = videoBorder.getObject3D("mesh");
+		
+		videoBorder.addEventListener("mousedown", function(event)
+		{
+			if ( video.paused )
+			{
+				video.play();
+				borderMesh.material.color.set("#004400");
+			}
+			else
+			{
+				video.pause();
+				borderMesh.material.color.set("#440000");
+			}
+		});
+	}
+	
+});
+
+</script>
+
+
   <body>
     <a-scene mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="disabled: false" device-orientation-permission-ui="enabled: false">
 
@@ -20,6 +54,7 @@
 		width = "17" height = "10"
 		position = "0 5 -20"
 		color = "#440000"
+		video-controls
         >		
 		<a-video  
 			id = "video-display"
