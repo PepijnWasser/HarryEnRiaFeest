@@ -38,6 +38,13 @@
   }
 });
 
+  <style>     
+        .mindar-ui-overlay {
+            z-index: 1; /* Hier geven we het andere element een lagere z-index waarde */
+            pointer-events: none;
+        }
+    </style>
+
 </script>
   <body>
     <button id="startbutton" onclick="verbergButton();" style="z-index: 9;">Start ervaring!</button>
