@@ -11,8 +11,12 @@
   var vid = document.querySelector('#video');
   vid.muted = false;
   vid.play();
-}
+    }
 
+    function verbergButton() {
+      var button = document.getElementById("startbutton");
+      button.style.display = "none";
+    }
 
   AFRAME.registerComponent('vidhandler', {
   init: function () {
@@ -40,9 +44,8 @@ tick:function(){
 });
 </script>
 
-  <button onclick="playVideo();">Play Video</button>
-
   <body>
+    <button id="startbutton" onclick="verbergButton();">Play Video</button>
     <a-scene mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" videoplayer>
 
 	 <a-assets>
