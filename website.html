@@ -7,29 +7,19 @@
   </head>
 
   <script>
-  function playVideo() {
-  var vid = document.querySelector('#video');
-  vid.muted = false;
-  vid.play();
-    }
-
     function verbergButton() {
       var button = document.getElementById("startbutton");
       button.style.display = "none";
     }
 
-  AFRAME.registerComponent('vidhandler', {
-  init: function () {
+   AFRAME.registerComponent('vidhandler', {
+   init: function () {
     this.toggle = false;
     this.vid = document.querySelector("#video")
     this.vid.pause()
+    },
 
-    // `click` event emitted by browser on mouse click.
-    document.querySelector('#video').addEventListener('click', function (evt) {
-     console.log('This 2D element was clicked!');
-    });
-},
-tick:function(){
+   tick:function(){
    if(this.el.object3D.visible == true){
      if(!this.toggle){
        this.toggle = true;
@@ -45,18 +35,17 @@ tick:function(){
 </script>
 
   <body>
-    <button id="startbutton" onclick="verbergButton();">Play Video</button>
-    <!--
-    <a-scene mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <button id="startbutton" onclick="verbergButton();">Start ervaring!</button>
+    <a-scene id="ARScene" mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
 	 <a-assets>
-        <video id="video" autoplay loop="true" src="./Uitnodigingsvideo.mp4" playsinline webkit-playsinline></video>
+        <video id="video" loop="true" src="./Uitnodigingsvideo.mp4" playsinline webkit-playsinline></video>
       </a-assets>
 	 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
-		  <a-plane position="0 0 0" width="1" height="1" material="src: #video" crossorigin></a-plane>
+		  <a-plane vidhandler position="0 0 0" width="1" height="1" material="src: #video" crossorigin></a-plane>
       </a-entity>
     </a-scene>
     -->
