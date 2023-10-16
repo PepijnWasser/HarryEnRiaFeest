@@ -7,11 +7,14 @@
   </head>
 
   <script>
+     let isButtonClicked = false;
+
     function verbergButton() {
       var button = document.getElementById("startbutton");
       button.style.display = "none";
       var view = document.getElementById("ARScene");
       view.style.display = "block"
+      isButtonClicked = true;
     }
 
     AFRAME.registerComponent('vidhandler', {
@@ -24,7 +27,7 @@
 
   tick: function () {
     if (this.el.object3D.visible == true) {
-      if (!this.toggle && this.aPlane.getAttribute("visible") !== false) {
+      if (!this.toggle && isButtonClicked !== false) {
         this.toggle = true;
         this.vid.play();
       }
