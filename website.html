@@ -7,6 +7,13 @@
   </head>
 
   <script>
+  function playVideo() {
+  var vid = document.querySelector('#video');
+  vid.muted = false;
+  vid.play();
+}
+
+
   AFRAME.registerComponent('vidhandler', {
   init: function () {
     this.toggle = false;
@@ -34,6 +41,7 @@ tick:function(){
 </script>
 
   <button onclick="playVideo();">Play Video</button>
+
   <body>
     <a-scene mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" videoplayer>
 
