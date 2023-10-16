@@ -12,13 +12,17 @@
     this.toggle = false;
     this.vid = document.querySelector("#video")
     this.vid.pause()
+
+    // `click` event emitted by browser on mouse click.
+    document.querySelector('#video').addEventListener('click', function (evt) {
+     console.log('This 2D element was clicked!');
+    });
 },
 tick:function(){
    if(this.el.object3D.visible == true){
      if(!this.toggle){
        this.toggle = true;
        this.vid.play();
-       this.vid.muted = false;
        
     }
   }else{
