@@ -10,6 +10,8 @@
     function verbergButton() {
       var button = document.getElementById("startbutton");
       button.style.display = "none";
+      var view = document.getElementById("ARScene");
+      view.style.display = "block"
     }
 
    AFRAME.registerComponent('vidhandler', {
@@ -48,6 +50,5 @@
 		  <a-plane vidhandler position="0 0 0" width="1" height="1" material="src: #video" crossorigin></a-plane>
       </a-entity>
     </a-scene>
-    -->
   </body>
 </html>
