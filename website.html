@@ -18,6 +18,8 @@ tick:function(){
      if(!this.toggle){
        this.toggle = true;
        this.vid.play();
+       this.vid.muted = false;
+       
     }
   }else{
     this.toggle = false;
