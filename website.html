@@ -11,6 +11,8 @@
 			let arSystem;
 			sceneEl.addEventListener('loaded', function () {
 		    arSystem = sceneEl.systems["mindar-image-system"];
+			arSystem.start();
+			});
 	});
 
    const exampleTarget = document.getElementByid('mVid');
