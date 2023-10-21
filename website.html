@@ -6,14 +6,15 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <script>
-        document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
 			const sceneEl = document.querySelector('ARScene');
 			let arSystem;
 			sceneEl.addEventListener('loaded', function () {
 		    arSystem = sceneEl.systems["mindar-image-system"];
-			arSystem.start();
+			arSystem.start()
+			});
 	});
-  const exampleTarget = document.querySelector('#mVid');
+   const exampleTarget = document.querySelector('#mVid');
 	exampleTarget.addEventListener("targetFound", event => {
 	  console.log("target found");
 	  					vid.play();
