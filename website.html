@@ -20,6 +20,11 @@
 			console.log("target found");
 	  		vid.play();
               });
+
+            exampleTarget.addEventListener("targetLost", event => {
+			console.log("target lost");
+	  		vid.pause();
+              });
         });
 	});
    
