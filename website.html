@@ -18,12 +18,12 @@
             console.log(vid);
 			exampleTarget.addEventListener("targetFound", event => {
 			console.log("target found");
-	  		vid.play();
+	  		exampleTarget.play();
               });
 
             exampleTarget.addEventListener("targetLost", event => {
 			console.log("target lost");
-	  		vid.pause();
+	  		exampleTarget.pause();
               });
         });
 	});
