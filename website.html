@@ -5,12 +5,20 @@
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
-
+  <script>
+  FRAME.registerComponent('vidhandler', {
+  init: function () {
+    this.toggle = false;
+    this.vid = document.querySelector("#video");
+    this.vid.pause();
+    this.aPlane = document.querySelector("a-plane");
+  }
+  </script>
   <body>
     <a-scene id="ARScene" mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" loading-screen="enabled: false" device-orientation-permission-ui="enabled: false" style="z-index: 1; pointer-events: none;">
 
 	 <a-assets>
-        <video id="video" loop="true" src="./Uitnodigingsvideo.mp4" playsinline webkit-playsinline></video>
+        <video id="video" loop="true" src="./Uitnodigingsvideo.mp4" playsinline webkit-playsinline vidhandler></video>
       </a-assets>
 	 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
