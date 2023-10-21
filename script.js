@@ -1,4 +1,4 @@
 document.querySelector("button").onclick = function() {
-  window.location = "index.html";
+  window.location.href = 'index.html';
   document.querySelector("#loading").style.display = "none"
 }
