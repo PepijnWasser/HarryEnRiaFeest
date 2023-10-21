@@ -6,13 +6,22 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <script>
-  AFRAME.registerComponent('vidhandler', {
-  init: function () {
-    this.toggle = false;
-    this.vid = document.querySelector("#video");
-    this.vid.pause();
-    this.aPlane = document.querySelector("a-plane");
-  }
+ AFRAME.registerComponent('registerevents', {
+			init: function() {
+
+				var marker = this.el;
+
+				marker.addEventListener('markerLost', function() {
+					vid.pause();
+					vid.currentTime = 0;
+				});
+
+				marker.addEventListener('markerFound', function() {
+					vid.currentTime = 0;
+					vid.play();
+				});
+			}
+		});
   </script>
   <body>
     <a-scene id="ARScene" mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" loading-screen="enabled: false" device-orientation-permission-ui="enabled: false" style="z-index: 1; pointer-events: none;">
