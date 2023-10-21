@@ -6,29 +6,6 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
   </head>
 
-  <script>
-    AFRAME.registerComponent('vidhandler', {
-  init: function () {
-    this.toggle = false;
-    this.vid = document.querySelector("#video");
-    this.vid.pause();
-    this.aPlane = document.querySelector("a-plane");
-  },
-
-  tick: function () {
-    if (this.el.object3D.visible == true) {
-      if (!this.toggle && isButtonClicked !== false) {
-        this.toggle = true;
-        this.vid.play();
-      }
-    } else {
-      this.toggle = false;
-      this.vid.pause();
-    }
-  }
-});
-
-</script>
   <body>
     <a-scene id="ARScene" mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" loading-screen="enabled: false" device-orientation-permission-ui="enabled: false" style="z-index: 1; pointer-events: none;">
 
