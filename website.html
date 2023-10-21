@@ -7,7 +7,6 @@
   </head>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-	        console.log("start");
 			const sceneEl = document.querySelector('#ARScene');
 			let arSystem;
 			sceneEl.addEventListener('loaded', function () {
@@ -16,6 +15,7 @@
 
             const exampleTarget = document.querySelector('#mVid');
 		    console.log(exampleTarget);
+            console.log(vid);
 			exampleTarget.addEventListener("targetFound", event => {
 			console.log("target found");
 	  		vid.play();
