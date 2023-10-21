@@ -39,13 +39,14 @@
   },
   tick:function(){  
    if(document.querySelector("#ARScene").object3D.visible == true){
-   console.log("hi");
      if(!this.toggle){
        this.toggle = true;
+        console.log("play");
        document.querySelector("#video").play();
      }
    }else{
      this.toggle = false;
+      console.log("pause");
      document.querySelector("#video").pause();
    }
   }
