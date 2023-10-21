@@ -7,7 +7,7 @@
   </head>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-	console.log("start");
+	        console.log("start");
 			const sceneEl = document.querySelector('#ARScene');
 			let arSystem;
 			sceneEl.addEventListener('loaded', function () {
@@ -19,6 +19,8 @@
 			exampleTarget.addEventListener("targetFound", event => {
 			console.log("target found");
 	  		vid.play();
+              });
+        });
 	});
    
   </script>
