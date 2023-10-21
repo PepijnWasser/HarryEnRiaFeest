@@ -18,11 +18,11 @@
     }
 
     AFRAME.registerComponent('vidhandler', {
-  init: function () {
-    this.toggle = false;
-    this.vid = document.querySelector("#video");
-    this.vid.pause();
-    this.aPlane = document.querySelector("a-plane");
+		  init: function () {
+		   this.toggle = false;
+		  this.vid = document.querySelector("#video");
+		 this.vid.pause();
+			this.aPlane = document.querySelector("a-plane");
   },
 
   tick: function () {
@@ -35,8 +35,7 @@
       this.toggle = false;
       this.vid.pause();
     }
-  }
-});
+  }};
 
   <style>     
         .mindar-ui-overlay {
