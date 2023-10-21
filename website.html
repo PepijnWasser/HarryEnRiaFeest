@@ -17,6 +17,27 @@
       isButtonClicked = true;
     }
 
+    AFRAME.registerComponent('vidhandler', {
+		  init: function () {
+		   this.toggle = false;
+		  this.vid = document.querySelector("#video");
+		 this.vid.pause();
+			this.aPlane = document.querySelector("a-plane");
+  },
+
+  tick: function () {
+    if (this.el.object3D.visible == true) {
+      if (!this.toggle && isButtonClicked !== false) {
+        this.toggle = true;
+        this.vid.play();
+      }
+    } else {
+      this.toggle = false;
+      this.vid.pause();
+    }
+  });
+  
+</script>
   <style>     
         .mindar-ui-overlay {
             z-index: 1; /* Hier geven we het andere element een lagere z-index waarde */
@@ -170,7 +191,6 @@
 		}
     </style>
 
-</script>
 
 	<div id="scan-marker">
 	<img style="width:55%; height:auto;" src="Voorkant.jpg" alt="Phone Frame">
