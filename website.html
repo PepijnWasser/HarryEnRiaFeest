@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
@@ -23,6 +25,16 @@
     mindar-image="imageTargetSrc: ./target.mind;" 
 	vr-mode-ui="enabled: false" 
   >
+   <a-assets>
+        <video id="video" loop="true" src="./Uitnodigingsvideo.mp4" playsinline webkit-playsinline></video>
+   </a-assets>
+	 
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+		  <a-plane style="display: none" vidhandler position="0 0 0" width="1" height="1" material="src: #video" crossorigin></a-plane>
+      </a-entity>
+
   <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
   <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
   <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
