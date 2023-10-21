@@ -11,10 +11,9 @@
 			let arSystem;
 			sceneEl.addEventListener('loaded', function () {
 		    arSystem = sceneEl.systems["mindar-image-system"];
-			arSystem.start()
-			});
 	});
-   const exampleTarget = document.querySelector('#mVid');
+
+   const exampleTarget = document.getElementByid('mVid');
 	exampleTarget.addEventListener("targetFound", event => {
 	  console.log("target found");
 	  					vid.play();
@@ -27,11 +26,16 @@
   </script>
   <body>
     <a-scene id="ARScene" mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" loading-screen="enabled: false" device-orientation-permission-ui="enabled: false" style="z-index: 1; pointer-events: none;">
+
+	 <a-assets>
+        <video id="video" loop="true" src="./Uitnodigingsvideo.mp4" playsinline webkit-playsinline></video>
+      </a-assets>
 	 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0" id="mVid">
 	<a-video 
+         autoplay="true" 
          loop="false"
          src="./Uitnodigingsvideo.mp4"
     </a-video>
