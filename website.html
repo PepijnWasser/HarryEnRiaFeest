@@ -21,10 +21,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     console.log(studioMarker);
     studioMarker.addEventListener("targetFound", (event) => {
     console.log("found")
+         document.querySelector("#video").play();
     })
 
     studioMarker.addEventListener("targetLost", (event) => {
       console.log("lost")
+           document.querySelector("#video").pause();
     });
 
   })
