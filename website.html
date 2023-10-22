@@ -38,8 +38,8 @@
     document.querySelector("#video").pause(); //reference to the video
   },
   tick:function(){  
-  console.log(document.querySelector("#scan-marker").style.display);
-   if(document.querySelector("#scan-marker").style.display === "hidden"){
+  console.log(document.querySelector("#scan-marker"));
+   if(document.querySelector("#scan-marker").style.display === 'hidden'){
      if(!this.toggle){
        this.toggle = true;
         console.log("play");
