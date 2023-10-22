@@ -5,26 +5,6 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <script>
-        AFRAME.registerComponent('vidhandler', {
-  init: function () {
-    this.toggle = false;
-    document.querySelector("#video").pause(); //reference to the video
-  },
-  tick:function(){  
-   if(document.querySelector("#mVid").style.display === 'hidden'){
-     if(!this.toggle){
-       this.toggle = true;
-        console.log("play");
-       document.querySelector("#video").play();
-     }
-   }else{
-     this.toggle = false;
-      console.log("pause");
-     document.querySelector("#video").pause();
-   }
-  }
-});
-	});
 
 
 
@@ -49,7 +29,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
    
   </script>
   <body>
-    <a-scene id="ARScene" mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" loading-screen="enabled: false" vidhandler>
+    <a-scene id="ARScene" mindar-image="imageTargetSrc: ./target.mind; filterMinCF:0.1; filterBeta: 10" vr-mode-ui="enabled: false" loading-screen="enabled: false">
 
 	 <a-assets>
         <video id="video" src="./Uitnodigingsvideo.mp4"></video>
