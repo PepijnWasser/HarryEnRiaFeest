@@ -38,7 +38,8 @@
     document.querySelector("#video").pause(); //reference to the video
   },
   tick:function(){  
-   if(document.querySelector("#mVid") == true){
+  concole.log(document.querySelector("#mVid").style.display);
+   if(document.querySelector("#mVid").style.display === "hidden"){
      if(!this.toggle){
        this.toggle = true;
         console.log("play");
