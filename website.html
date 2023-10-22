@@ -5,33 +5,6 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-			const sceneEl = document.querySelector('#ARScene');
-            	sceneEl.addEventListener("arError", (event) => {
-	                 console.log("MindAR failed to start")
-	            });
-			let arSystem;
-			sceneEl.addEventListener('loaded', function () {
-		    arSystem = sceneEl.systems["mindar-image-system"];
-			arSystem.start();
-
-
-            const exampleTarget = document.querySelector('#video');
-		    console.log(exampleTarget);
-            exampleTarget.pause();
-			exampleTarget.addEventListener("targetFound", event => {
-			console.log("target found");
-	  		exampleTarget.play();
-              });
-
-            exampleTarget.addEventListener("targetLost", event => {
-			console.log("target lost");
-	  		exampleTarget.pause();
-              });
-        });
-
-
-
         AFRAME.registerComponent('vidhandler', {
   init: function () {
     this.toggle = false;
@@ -53,6 +26,23 @@
   }
 });
 	});
+
+
+
+
+     AFRAME.registerComponent("marker-check", {
+        init: function () {
+          // Controleer of er een marker is geladen.
+          this.el.addEventListener("markerFound", this.markerFound.bind(this));
+          this.el.addEventListener("markerLost", this.markerLost.bind(this));
+        },
+        markerFound: function () {
+          console.log("Marker is geladen.");
+        },
+        markerLost: function () {
+          console.log("Marker is niet meer zichtbaar.");
+        },
+      });
    
   </script>
   <body>
@@ -68,6 +58,7 @@
 	<a-plane 
          src="#video"
          id="mVid"
+         marker-check
     </a-video>
       </a-entity>
     </a-scene>
