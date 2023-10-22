@@ -11,7 +11,6 @@
     document.querySelector("#video").pause(); //reference to the video
   },
   tick:function(){  
-  console.log(document.querySelector("#mVid").object3D.visible);
    if(document.querySelector("#mVid").style.display === 'hidden'){
      if(!this.toggle){
        this.toggle = true;
@@ -29,20 +28,24 @@
 
 
 
+window.addEventListener("DOMContentLoaded", (event) => {
+  
+  const sceneEl = document.querySelector("#ARScene");
+  
+  sceneEl.addEventListener("arReady", (event) => {
+    
+    const studioMarker = document.getElementById("mVid");
+    console.log(studioMarker);
+    studioMarker.addEventListener("targetFound", (event) => {
+    console.log("found")
+    })
 
-     AFRAME.registerComponent("marker-check", {
-        init: function () {
-          // Controleer of er een marker is geladen.
-          this.el.addEventListener("markerFound", this.markerFound.bind(this));
-          this.el.addEventListener("markerLost", this.markerLost.bind(this));
-        },
-        markerFound: function () {
-          console.log("Marker is geladen.");
-        },
-        markerLost: function () {
-          console.log("Marker is niet meer zichtbaar.");
-        },
-      });
+    studioMarker.addEventListener("targetLost", (event) => {
+      console.log("lost")
+    });
+
+  })
+})
    
   </script>
   <body>
@@ -58,7 +61,6 @@
 	<a-plane 
          src="#video"
          id="mVid"
-         marker-check
     </a-video>
       </a-entity>
     </a-scene>
