@@ -12,6 +12,7 @@ h1 {
 
 button{
 	z-index: 9999;
+	font-size: 40px;
 }
 
 .button {
@@ -25,4 +26,5 @@ button{
   line-height: 100px;
   text-align: center;
   color: white;
+  font-size: 40px;
 }
