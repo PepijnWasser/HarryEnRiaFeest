@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
    
   </script>
   <body>
-    <a-scene id="ARScene" mindar-image="imageTargetSrc: ./targets2.mind; vr-mode-ui="enabled: false" loading-screen="enabled: false">
+    <a-scene id="ARScene" mindar-image="imageTargetSrc: ./targets2.mind; filterMinCF:0.0001; filterBeta: 0.001" vr-mode-ui="enabled: false" loading-screen="enabled: false">
 
 	 <a-assets>
         <video id="video" src="./Uitnodigingsvideo.mp4"></video>
