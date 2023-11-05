@@ -15,8 +15,8 @@ button{
 }
 
 .button {
-  width: 200px;
-  height: 100px;
+  width: 600px;
+  height: 300px;
   position: absolute;
   top: calc(50% - 300px);
   left: calc(50% - 50px);
