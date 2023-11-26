@@ -3,7 +3,8 @@ document.querySelector("button").onclick = function() {
   document.querySelector("#loading").style.display = "none"
 }
 
-document.querySelector("button2").onclick = function() {
+var button2Element = document.getElementById("button2").onclick = function() {
   window.location.href = 'website.html';
   document.querySelector("#loading").style.display = "none"
 }
+
