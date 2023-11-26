@@ -11,7 +11,7 @@ if (button2Element) {
     // Voeg een gebeurtenisluisteraar toe voor het klikken van de knop
     button2Element.addEventListener("click", function() {
         // Verander de locatie naar de gewenste pagina
-        window.location.href = "nieuwe_pagina.html";
+        window.location.href = "PlainVideo.html";
     });
 } else {
     // Melding als het element niet is gevonden
