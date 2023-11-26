@@ -20,6 +20,7 @@ button2{
 	left: 5%;
 	font-size: 16px;
 	background-color: #d9d9d9;
+	position: relative;
 }
 
 .container {
