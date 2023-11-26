@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Width Video</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -24,8 +23,10 @@ body, html {
 }
 
 .video-container {
-             width: 100vh; /* 100% van de viewport hoogte */
-            height: 100vw; /* 100% van de viewport breedte */
+             width: 100vh
+            height: 100vw;
+            transform-origin: 100% 0;
+            transform: rotate(90deg);
 }
 
 video {
